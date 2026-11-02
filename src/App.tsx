@@ -130,21 +130,26 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0E0E12] text-[#F8F8FA] flex flex-col font-sans selection:bg-[#F5A623] selection:text-[#0E0E12]">
+    <div className="min-h-screen bg-[#20232B] text-white flex flex-col font-sans selection:bg-[#F9B91D] selection:text-[#1A1D24] relative overflow-x-hidden">
+      {/* Subtle background ambient glows matching reference poster */}
+      <div className="fixed -bottom-24 -left-24 w-72 h-72 bg-[#F9B91D] rounded-full filter blur-[100px] opacity-10 pointer-events-none" />
+      <div className="fixed -top-24 -right-24 w-80 h-80 bg-white rounded-full filter blur-[120px] opacity-[0.03] pointer-events-none" />
+
       {/* Top Header */}
       <Header
         wallet={wallet}
         onOpenWallet={() => setIsWalletOpen(true)}
         onNavigateHome={handleNavigateHome}
+        onOpenCreateTab={() => setIsCreateTabOpen(true)}
         activeTabTitle={activeTab?.name}
       />
 
       {/* Main View Container */}
-      <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 pt-3 sm:pt-5">
+      <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 pt-3 sm:pt-5 relative z-10">
         {isLoading ? (
           <div className="py-28 text-center space-y-3">
-            <Loader2 className="w-7 h-7 animate-spin text-[#F5A623] mx-auto" />
-            <p className="text-xs text-[#8E8E9B]">Loading Settle...</p>
+            <Loader2 className="w-7 h-7 animate-spin text-[#F9B91D] mx-auto" />
+            <p className="text-xs text-[#A0A5B1]">Loading Settle...</p>
           </div>
         ) : activeTab ? (
           <TabDetail

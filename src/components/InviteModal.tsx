@@ -70,27 +70,27 @@ export const InviteModal: React.FC<InviteModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-200">
       <div 
-        className="w-full sm:max-w-md bg-[#16161C] border border-white/[0.08] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
+        className="w-full sm:max-w-md bg-[#272B35] border border-white/[0.08] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-5 py-4 border-b border-white/[0.06] flex items-center justify-between">
+        <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <SettleLogo size={22} />
             <div>
-              <h3 className="font-display font-bold text-base text-white">
+              <h3 className="font-display font-extrabold text-base text-white">
                 Invite to {tab.name}
               </h3>
-              <p className="text-[11px] text-[#8E8E9B]">
+              <p className="text-[11px] text-[#A0A5B1]">
                 Private link and code access
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white/[0.04] text-[#8E8E9B] hover:text-white flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-full bg-white/[0.06] text-[#A0A5B1] hover:text-white flex items-center justify-center transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -101,21 +101,21 @@ export const InviteModal: React.FC<InviteModalProps> = ({
           {/* Method 1: Short Code */}
           {tab.code && (
             <div className="space-y-1.5">
-              <span className="text-xs font-medium text-[#8E8E9B] block">
+              <span className="text-xs font-semibold text-[#A0A5B1] block">
                 Short Access Code
               </span>
-              <div className="bg-[#111115] border border-white/[0.06] rounded-2xl p-3 flex items-center justify-between gap-3">
+              <div className="bg-[#20232B] border border-white/[0.08] rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-inner">
                 <div className="space-y-0.5">
-                  <span className="text-xl font-mono font-bold text-[#F5A623] tracking-widest block">
+                  <span className="text-2xl font-mono font-extrabold text-[#F9B91D] tracking-widest block">
                     {tab.code}
                   </span>
-                  <span className="text-[10px] text-[#6E6E7C]">
+                  <span className="text-[11px] text-[#A0A5B1]">
                     Enter on home screen to open this tab
                   </span>
                 </div>
                 <button
                   onClick={handleCopyCode}
-                  className="px-3.5 py-2 bg-white/[0.06] hover:bg-white/[0.1] text-white rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5"
+                  className="px-4 py-2 bg-white/[0.08] hover:bg-white/[0.14] text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
                 >
                   {copiedCode ? <Check className="w-3.5 h-3.5 text-[#34D399]" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copiedCode ? 'Copied' : 'Copy'}</span>
@@ -126,16 +126,16 @@ export const InviteModal: React.FC<InviteModalProps> = ({
 
           {/* Method 2: Shareable Link */}
           <div className="space-y-1.5">
-            <span className="text-xs font-medium text-[#8E8E9B] block">
+            <span className="text-xs font-semibold text-[#A0A5B1] block">
               Direct Private Link
             </span>
-            <div className="bg-[#111115] border border-white/[0.06] rounded-2xl p-2.5 flex items-center justify-between gap-2">
-              <span className="text-xs text-[#E4E4EB] truncate font-mono px-1">
+            <div className="bg-[#20232B] border border-white/[0.08] rounded-2xl p-2.5 flex items-center justify-between gap-2 shadow-inner">
+              <span className="text-xs text-white truncate font-mono px-1">
                 {shareUrl}
               </span>
               <button
                 onClick={handleCopyLink}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 bg-[#F5A623] hover:bg-[#E2971A] text-[#0E0E12] rounded-xl text-xs font-semibold transition-all"
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 bg-[#F9B91D] hover:bg-[#E5A817] text-[#1A1D24] font-bold rounded-xl text-xs shadow-md shadow-[#F9B91D]/20 transition-all cursor-pointer"
               >
                 {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedLink ? 'Copied' : 'Copy'}</span>
@@ -144,13 +144,13 @@ export const InviteModal: React.FC<InviteModalProps> = ({
           </div>
 
           {/* Method 3: Add friend by address */}
-          <div className="space-y-2 pt-2 border-t border-white/[0.04]">
-            <span className="text-xs font-medium text-[#8E8E9B] block">
+          <div className="space-y-2 pt-2 border-t border-white/[0.08]">
+            <span className="text-xs font-semibold text-[#A0A5B1] block">
               Or Add Member by Nimiq Address
             </span>
 
             {error && (
-              <div className="p-2.5 bg-[#F87171]/10 border border-[#F87171]/20 rounded-xl text-xs text-[#F87171]">
+              <div className="p-2.5 bg-[#F87171]/15 border border-[#F87171]/30 rounded-xl text-xs text-[#F87171]">
                 {error}
               </div>
             )}
@@ -162,7 +162,7 @@ export const InviteModal: React.FC<InviteModalProps> = ({
                   placeholder="NQxx xxxx xxxx xxxx xxxx..."
                   value={newAddress}
                   onChange={(e) => setNewAddress(e.target.value)}
-                  className="w-full bg-[#111115] border border-white/[0.06] rounded-xl px-3 py-2.5 text-xs font-mono text-white placeholder:text-[#525262] focus:outline-none focus:border-[#F5A623]/50 transition-colors"
+                  className="w-full bg-[#20232B] border border-white/[0.08] rounded-xl px-3 py-2.5 text-xs font-mono text-white placeholder:text-[#6B7280] focus:outline-none focus:border-[#F9B91D]/60 transition-colors"
                   required
                 />
               </div>
@@ -173,14 +173,14 @@ export const InviteModal: React.FC<InviteModalProps> = ({
                   placeholder="Friend's Name (e.g. Sam, Lucas)"
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
-                  className="w-full bg-[#111115] border border-white/[0.06] rounded-xl px-3 py-2.5 text-xs text-white placeholder:text-[#525262] focus:outline-none focus:border-[#F5A623]/50 transition-colors"
+                  className="w-full bg-[#20232B] border border-white/[0.08] rounded-xl px-3 py-2.5 text-xs text-white placeholder:text-[#6B7280] focus:outline-none focus:border-[#F9B91D]/60 transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-2.5 bg-white/[0.06] hover:bg-white/[0.1] text-white font-medium text-xs rounded-xl transition-all disabled:opacity-50"
+                className="w-full py-2.5 bg-white/[0.08] hover:bg-white/[0.14] text-white font-bold text-xs rounded-xl transition-all disabled:opacity-50 cursor-pointer"
               >
                 {isSubmitting ? 'Adding...' : 'Add Member to Tab'}
               </button>
@@ -188,15 +188,15 @@ export const InviteModal: React.FC<InviteModalProps> = ({
           </div>
 
           {/* Current Members List */}
-          <div className="pt-2 border-t border-white/[0.04] space-y-2">
-            <span className="text-[11px] font-medium text-[#8E8E9B] uppercase tracking-wider block">
+          <div className="pt-2 border-t border-white/[0.08] space-y-2">
+            <span className="text-[11px] font-bold text-[#A0A5B1] uppercase tracking-wider block">
               Members in this Tab ({tab.members.length})
             </span>
             <div className="flex flex-wrap gap-1.5">
               {tab.members.map((m) => (
                 <div
                   key={m.address}
-                  className="flex items-center gap-1.5 bg-[#111115] border border-white/[0.04] px-2.5 py-1 rounded-full text-xs text-[#E4E4EB]"
+                  className="flex items-center gap-1.5 bg-[#20232B] border border-white/[0.06] px-2.5 py-1 rounded-full text-xs text-white"
                 >
                   <div
                     className="w-1.5 h-1.5 rounded-full"

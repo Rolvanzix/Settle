@@ -94,23 +94,23 @@ export const SettleModal: React.FC<SettleModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-200">
       <div 
-        className="w-full sm:max-w-md bg-[#16161C] border border-white/[0.08] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
+        className="w-full sm:max-w-md bg-[#272B35] border border-white/[0.08] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-5 py-4 border-b border-white/[0.06] flex items-center justify-between">
+        <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <SettleLogo size={22} />
-            <span className="font-display font-bold text-base text-white">
+            <span className="font-display font-extrabold text-base text-white">
               Settle Balance
             </span>
           </div>
           <button
             onClick={onClose}
             disabled={status === 'processing'}
-            className="w-8 h-8 rounded-full bg-white/[0.04] text-[#8E8E9B] hover:text-white flex items-center justify-center transition-colors disabled:opacity-50"
+            className="w-8 h-8 rounded-full bg-white/[0.06] text-[#A0A5B1] hover:text-white flex items-center justify-center transition-colors disabled:opacity-50"
           >
             <X className="w-4 h-4" />
           </button>
@@ -120,28 +120,28 @@ export const SettleModal: React.FC<SettleModalProps> = ({
         <div className="p-6 space-y-5 overflow-y-auto">
           {status === 'success' ? (
             <div className="py-6 text-center space-y-4">
-              <div className="w-14 h-14 rounded-full bg-[#F5A623]/10 text-[#F5A623] flex items-center justify-center mx-auto">
-                <Check className="w-7 h-7" />
+              <div className="w-14 h-14 rounded-full bg-[#F9B91D]/15 text-[#F9B91D] flex items-center justify-center mx-auto">
+                <Check className="w-7 h-7 stroke-[3]" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-xl font-display font-bold text-white">
+                <h4 className="text-xl font-display font-extrabold text-white">
                   Payment Recorded
                 </h4>
-                <p className="text-xs text-[#8E8E9B] max-w-xs mx-auto">
+                <p className="text-xs text-[#A0A5B1] max-w-xs mx-auto">
                   {transfer.amount} {transfer.currency} from {transfer.fromName} to {transfer.toName} has been settled.
                 </p>
               </div>
 
               {deepLink && (
-                <div className="p-3 bg-[#111115] border border-white/[0.06] rounded-xl text-left space-y-2">
-                  <span className="text-[10px] text-[#8E8E9B] uppercase tracking-wider block font-medium">
+                <div className="p-3 bg-[#20232B] border border-white/[0.08] rounded-xl text-left space-y-2">
+                  <span className="text-[10px] text-[#A0A5B1] uppercase tracking-wider block font-bold">
                     Nimiq Pay Deep Link
                   </span>
                   <a
                     href={deepLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs font-mono text-[#F5A623] hover:underline break-all block"
+                    className="text-xs font-mono text-[#F9B91D] hover:underline break-all block"
                   >
                     Open in Nimiq Pay App →
                   </a>
@@ -149,11 +149,11 @@ export const SettleModal: React.FC<SettleModalProps> = ({
               )}
 
               {txHash && (
-                <div className="bg-[#111115] border border-white/[0.05] rounded-xl p-3 text-left space-y-1">
-                  <span className="text-[10px] text-[#6E6E7C] uppercase tracking-wider block font-semibold">
+                <div className="bg-[#20232B] border border-white/[0.08] rounded-xl p-3 text-left space-y-1">
+                  <span className="text-[10px] text-[#6B7280] uppercase tracking-wider block font-bold">
                     Receipt Identifier
                   </span>
-                  <p className="text-xs font-mono text-[#F5A623]/90 break-all">
+                  <p className="text-xs font-mono text-[#F9B91D] break-all">
                     {txHash}
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export const SettleModal: React.FC<SettleModalProps> = ({
 
               <button
                 onClick={onClose}
-                className="w-full py-3.5 bg-[#F5A623] hover:bg-[#E2971A] text-[#0E0E12] font-semibold text-sm rounded-2xl transition-all shadow-sm"
+                className="w-full py-3.5 bg-[#F9B91D] hover:bg-[#E5A817] text-[#1A1D24] font-extrabold text-sm rounded-2xl transition-all shadow-lg shadow-[#F9B91D]/20 cursor-pointer"
               >
                 Return to Tab
               </button>
@@ -169,52 +169,52 @@ export const SettleModal: React.FC<SettleModalProps> = ({
           ) : (
             <>
               {/* Transfer Parties Strip */}
-              <div className="bg-[#111115] border border-white/[0.05] rounded-2xl p-4 space-y-3">
+              <div className="bg-[#20232B] border border-white/[0.08] rounded-2xl p-4 space-y-3 shadow-inner">
                 <div className="flex items-center justify-between text-xs">
                   <div className="space-y-0.5 min-w-0 flex-1">
-                    <span className="text-[10px] text-[#6E6E7C] uppercase tracking-wider block font-medium">
+                    <span className="text-[10px] text-[#A0A5B1] uppercase tracking-wider block font-semibold">
                       Payer
                     </span>
-                    <span className="font-semibold text-white block truncate">
+                    <span className="font-bold text-white block truncate">
                       {transfer.fromName}
                     </span>
-                    <span className="font-mono text-[10px] text-[#6E6E7C] block truncate">
+                    <span className="font-mono text-[10px] text-[#6B7280] block truncate">
                       {truncateAddress(transfer.fromAddress)}
                     </span>
                   </div>
 
-                  <div className="w-7 h-7 rounded-full bg-white/[0.04] text-[#8E8E9B] flex items-center justify-center shrink-0 mx-2">
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="w-8 h-8 rounded-full bg-white/[0.06] text-[#F9B91D] flex items-center justify-center shrink-0 mx-2">
+                    <ArrowRight className="w-4 h-4" />
                   </div>
 
                   <div className="space-y-0.5 min-w-0 flex-1 text-right">
-                    <span className="text-[10px] text-[#6E6E7C] uppercase tracking-wider block font-medium">
+                    <span className="text-[10px] text-[#A0A5B1] uppercase tracking-wider block font-semibold">
                       Recipient
                     </span>
-                    <span className="font-semibold text-white block truncate">
+                    <span className="font-bold text-white block truncate">
                       {transfer.toName}
                     </span>
-                    <span className="font-mono text-[10px] text-[#6E6E7C] block truncate">
+                    <span className="font-mono text-[10px] text-[#6B7280] block truncate">
                       {truncateAddress(transfer.toAddress)}
                     </span>
                   </div>
                 </div>
 
                 {/* Big Calm Hero Amount */}
-                <div className="pt-3 border-t border-white/[0.04] text-center">
-                  <span className="text-[10px] text-[#8E8E9B] uppercase tracking-wider block">
+                <div className="pt-3 border-t border-white/[0.06] text-center">
+                  <span className="text-[10px] text-[#A0A5B1] uppercase tracking-wider block font-bold">
                     Settlement Amount
                   </span>
                   <div className="flex items-baseline justify-center gap-1.5 mt-0.5">
-                    <span className="text-4xl font-display font-bold text-white tabular-nums tracking-tight">
+                    <span className="text-4xl font-display font-extrabold text-white tabular-nums tracking-tight">
                       {transfer.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 })}
                     </span>
-                    <span className="text-sm font-semibold text-[#F5A623] font-mono">
+                    <span className="text-sm font-bold text-[#F9B91D] font-mono">
                       {transfer.currency}
                     </span>
                   </div>
                   {lunaValue !== null && (
-                    <span className="text-[10px] font-mono text-[#6E6E7C] block mt-0.5">
+                    <span className="text-[10px] font-mono text-[#A0A5B1] block mt-0.5">
                       = {lunaValue.toLocaleString()} Luna
                     </span>
                   )}
@@ -222,23 +222,23 @@ export const SettleModal: React.FC<SettleModalProps> = ({
               </div>
 
               {/* Transfer Details */}
-              <div className="space-y-2 text-xs divide-y divide-white/[0.04]">
-                <div className="flex justify-between py-1 text-[#8E8E9B]">
+              <div className="space-y-2 text-xs divide-y divide-white/[0.06]">
+                <div className="flex justify-between py-1 text-[#A0A5B1]">
                   <span>Network</span>
-                  <span className="text-white font-medium">Nimiq Pay</span>
+                  <span className="text-white font-semibold">Nimiq Pay</span>
                 </div>
-                <div className="flex justify-between py-1 text-[#8E8E9B]">
+                <div className="flex justify-between py-1 text-[#A0A5B1]">
                   <span>Network Fee</span>
-                  <span className="text-[#34D399] font-medium font-mono">Free / &lt; 0.001 NIM</span>
+                  <span className="text-[#34D399] font-bold font-mono">Free / &lt; 0.001 NIM</span>
                 </div>
-                <div className="flex justify-between py-1 text-[#8E8E9B]">
+                <div className="flex justify-between py-1 text-[#A0A5B1]">
                   <span>Tab</span>
-                  <span className="text-white truncate max-w-[200px]">{tab.name}</span>
+                  <span className="text-white font-medium truncate max-w-[200px]">{tab.name}</span>
                 </div>
               </div>
 
               {errorMsg && (
-                <div className="p-3 bg-[#F87171]/10 border border-[#F87171]/20 rounded-xl flex items-start gap-2.5 text-xs text-[#F87171]">
+                <div className="p-3 bg-[#F87171]/15 border border-[#F87171]/30 rounded-xl flex items-start gap-2.5 text-xs text-[#F87171]">
                   <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>{errorMsg}</span>
                 </div>
@@ -249,11 +249,11 @@ export const SettleModal: React.FC<SettleModalProps> = ({
                 <button
                   onClick={handleConfirmPay}
                   disabled={status === 'processing'}
-                  className="w-full py-3.5 bg-[#F5A623] hover:bg-[#E2971A] active:scale-[0.98] text-[#0E0E12] font-semibold text-sm rounded-2xl transition-all shadow-sm flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-3.5 bg-[#F9B91D] hover:bg-[#E5A817] active:scale-[0.98] text-[#1A1D24] font-extrabold text-sm rounded-2xl transition-all shadow-lg shadow-[#F9B91D]/20 flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                 >
                   {status === 'processing' ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin text-[#0E0E12]" />
+                      <Loader2 className="w-4 h-4 animate-spin text-[#1A1D24]" />
                       <span>Processing Payment...</span>
                     </>
                   ) : (
@@ -265,7 +265,7 @@ export const SettleModal: React.FC<SettleModalProps> = ({
                   type="button"
                   onClick={handleMarkAsPaidOffline}
                   disabled={status === 'processing'}
-                  className="w-full py-2 text-xs text-[#8E8E9B] hover:text-white font-medium text-center transition-colors"
+                  className="w-full py-2 text-xs text-[#A0A5B1] hover:text-white font-semibold text-center transition-colors cursor-pointer"
                 >
                   Already paid? Mark settled
                 </button>

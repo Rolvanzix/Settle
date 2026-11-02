@@ -16,17 +16,17 @@ export const SettleLogo: React.FC<SettleLogoProps> = ({ className = 'w-7 h-7', s
       className={className}
       aria-hidden="true"
     >
-      {/* Outer Hexagon with rounded look */}
+      {/* Outer Hexagon with rounded look matching reference */}
       <path
-        d="M50 6 L88 28 L88 72 L50 94 L12 72 L12 28 Z"
-        stroke="#F5A623"
-        strokeWidth="11"
+        d="M50 8 L86 28.5 L86 71.5 L50 92 L14 71.5 L14 28.5 Z"
+        stroke="#F9B91D"
+        strokeWidth="12"
         strokeLinejoin="round"
         strokeLinecap="round"
         fill="none"
       />
       {/* Inner subtle glow center */}
-      <circle cx="50" cy="50" r="14" fill="#F5A623" fillOpacity="0.2" />
+      <circle cx="50" cy="50" r="12" fill="#F9B91D" fillOpacity="0.25" />
     </svg>
   );
 };
