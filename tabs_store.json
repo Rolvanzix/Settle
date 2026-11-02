@@ -1,0 +1,23 @@
+{
+  "tab_d0b23f0375d58bdc": {
+    "id": "tab_d0b23f0375d58bdc",
+    "code": "6D2G8B",
+    "name": "Alps Ski Trip 2026",
+    "description": "",
+    "coverImage": "/assets/aistudio/file_00000000374881f5983b64890efd45c2_4b6a22b6.png",
+    "currency": "NIM",
+    "createdAt": "2026-11-02T17:20:43.679Z",
+    "updatedAt": "2026-11-02T17:20:43.679Z",
+    "createdBy": "NQ07 0000 0000 0000 0000 0000 0000 0000 0000",
+    "members": [
+      {
+        "address": "NQ07 0000 0000 0000 0000 0000 0000 0000 0000",
+        "name": "Trip Leader",
+        "avatarColor": "#F5A623",
+        "joinedAt": "2026-11-02T17:20:43.679Z"
+      }
+    ],
+    "expenses": [],
+    "settlements": []
+  }
+}

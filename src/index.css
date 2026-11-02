@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #0E0E12;
+    --bg-surface: #16161C;
+    --bg-surface-elevated: #1D1D26;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --gold-primary: #F5A623;
+    --gold-light: #F7B84E;
+    --text-primary: #F8F8FA;
+    --text-secondary: #8E8E9B;
+    --text-tertiary: #5D5D6E;
+  }
+
+  body {
+    background-color: #0E0E12;
+    color: #F8F8FA;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono, code, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Smooth mobile touch tap highlights & scrolling */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar for tab feeds */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}

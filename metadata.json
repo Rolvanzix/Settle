@@ -1,0 +1,6 @@
+{
+  "name": "Settle - Nimiq Pay Group Expense Netting",
+  "description": "Continuous group obligation netting app for Nimiq Pay. Shared tabs, expense splitting in NIM and USDT, minimal debt netting algorithm, and one-tap instant wallet settlements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
